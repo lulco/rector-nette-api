@@ -1,5 +1,5 @@
 /.idea
-/nette-api-app/log
-/nette-api-app/temp
+nette-api-app/log/*
+nette-api-app/temp/*
 /nette-api-app/vendor
 /rector/vendor
