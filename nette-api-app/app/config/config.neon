@@ -1,0 +1,12 @@
+application:
+    mapping:
+        *: App\*Module\Presenters\*Presenter
+        Api: Tomaj\NetteApi\Presenters\*Presenter
+
+services:
+    router: App\RouterFactory::createRouter()
+
+    apiDecider:
+        factory: Tomaj\NetteApi\ApiDecider
+        setup:
+            - addApiHandler(Tomaj\NetteApi\EndpointIdentifier('POST', 1, 'test'), App\Api\V1\Handler\TestHandler(), Tomaj\NetteApi\Authorization\NoAuthorization())

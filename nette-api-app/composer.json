@@ -1,0 +1,14 @@
+{
+    "name": "lulco/rector-nette-api",
+    "description": "Rector example for tomaj/nette-api",
+    "license": "MIT",
+    "require": {
+        "php": ">= 7.1",
+        "nette/application": "^2.4",
+        "nette/bootstrap": "^2.4",
+        "nette/robot-loader": "^3.0",
+        "latte/latte": "^2.5",
+        "tomaj/nette-api": "^1.16"
+
+    }
+}
