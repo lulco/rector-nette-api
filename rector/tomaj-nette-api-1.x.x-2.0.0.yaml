@@ -1,0 +1,57 @@
+services:
+    Rector\Rector\ClassMethod\AddReturnTypeDeclarationRector:
+        Tomaj\NetteApi\Authorization\ApiAuthorizationInterface:
+            authorized: 'bool'
+            getErrorMessage: '?string'
+
+        Tomaj\NetteApi\Handlers\ApiHandlerInterface:
+            params: 'array'
+            handle: 'Tomaj\NetteApi\Response\ResponseInterface'
+
+        Tomaj\NetteApi\Logger\ApiLoggerInterface:
+            log: 'bool'
+
+        Tomaj\NetteApi\Misc\BearerTokenRepositoryInterface:
+            validToken: 'bool'
+            ipRestrictions: '?string'
+
+        Tomaj\NetteApi\Misc\IpDetectorInterface:
+            getRequestIp: 'string'
+
+        Tomaj\NetteApi\Params\ParamInterface:
+            isValid: 'bool'
+            getKey: 'string'
+
+        Tomaj\NetteApi\EndpointInterface:
+            getMethod: 'string'
+            getVersion: 'int'
+            getPackage: 'string'
+            getApiAction: '?string'
+            getUrl: 'string'
+
+    Rector\Rector\Typehint\ParentTypehintedArgumentRector:
+        Tomaj\NetteApi\Handlers\ApiHandlerInterface:
+            handle:
+                $params: 'array'
+
+        Tomaj\NetteApi\Logger\ApiLoggerInterface:
+            log:
+                $responseCode: 'int'
+                $requestMethod: 'string'
+                $requestHeader: 'string'
+                $requestUri: 'string'
+                $requestIp: 'string'
+                $requestAgent: 'string'
+                $responseTime: 'int'
+
+        Tomaj\NetteApi\Misc\BearerTokenRepositoryInterface:
+            validToken:
+                $token: 'string'
+            ipRestrictions:
+                $token: 'string'
+
+    Rector\Renaming\Rector\MethodCall\RenameMethodRector:
+        Tomaj\NetteApi\ApiDecider:
+            addApiHandler: 'addApi'
+            getApiHandler: 'getApi'
+            getHandlers: 'getApis'

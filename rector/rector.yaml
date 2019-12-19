@@ -1,0 +1,3 @@
+imports:
+  - { resource: tomaj-nette-api-1.x.x-2.0.0.yaml }
+  - { resource: vendor/rector/rector/config/set/nette/nette-30.yaml }
