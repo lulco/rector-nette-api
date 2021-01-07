@@ -1,0 +1,5 @@
+{
+    "require": {
+        "efabrica/rector-tomaj-nette-api": "dev-main"
+    }
+}
