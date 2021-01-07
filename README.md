@@ -11,7 +11,10 @@ composer install
 ```
 
 ## Executing rector
+(from `nette-api-app` which should be actual if installation steps were followed)
+```shell
 vendor/bin/rector process app --autoload-file app/bootstrap.php -vvv
+```
 
 ## Output
 
