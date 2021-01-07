@@ -21,12 +21,5 @@ return static function (ContainerConfigurator $containerConfigurator): void
         RemoveParentAndNameFromComponentConstructorRector::class
     ]);
 
-    $services = $containerConfigurator->services();
-    $services->set(RenameClassRector::class)->call('configure', [[
-        RenameClassRector::OLD_TO_NEW_CLASSES => [
-            'Klimesf\NetteRequestId\Provider' => 'Efabrica\Nette\DI\Extension\RequestId\Provider',
-        ]
-    ]]);
-
     $containerConfigurator->import(__DIR__ . '/../external-rules/vendor/efabrica/rector-tomaj-nette-api/src/Sets/tomaj-nette-api-1.x.x-2.0.0.php');
 };
